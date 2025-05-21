@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Form Gabung Grup WhatsApp Shifu Ngapain Shifuu</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-image: url('IMG_20250521_142053.jpg'); /* Ganti dengan nama file PNG HD */
+      background-size: cover;
+      background-position: center;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .form-container {
+      background: rgba(255, 255, 255, 0.9);
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      width: 90%;
+      max-width: 400px;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: #25D366;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      margin-top: 20px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #1ebc57;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h2>Form Gabung WhatsApp</h2>
+    <form id="waForm">
+      <label>Nama Lengkap:</label>
+      <input type="text" id="nama" required>
+
+      <label>Nama ID TikTok:</label>
+      <input type="text" id="tiktok" required>
+
+      <label>UID Wuthering Waves:</label>
+      <input type="text" id="uid" required>
+
+      <button type="submit">Kirim ke WhatsApp Admin</button>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById("waForm").addEventListener("submit", function(event){
+      event.preventDefault();
+
+      let nama = document.getElementById("nama").value;
+      let tiktok = document.getElementById("tiktok").value;
+      let uid = document.getElementById("uid").value;
+
+      let pesan = `Halo Admin, saya ingin gabung grup. Berikut data saya:%0A` +
+                  `Nama Lengkap: ${nama}%0A` +
+                  `ID TikTok: ${tiktok}%0A` +
+                  `UID Wuthering Waves: ${uid}`;
+
+      let noAdmin = "6282173155205"; // Ganti nomor admin di sini
+
+      window.open(`https://wa.me/${noAdmin}?text=${pesan}`, "_blank");
+    });
+  </script>
+</body>
+</html>
